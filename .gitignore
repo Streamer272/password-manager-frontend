@@ -6,6 +6,11 @@
 /.atom
 /.vs
 
+# scss build files
+*.css.map
+/src/styles/.sass-cache
+/src/styles/.sass-cache/*
+
 # dependencies
 /node_modules
 /.pnp

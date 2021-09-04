@@ -11,6 +11,8 @@ function createWindow () {
 
         maximizable: false,
 
+        title: 'Password manager',
+
         webPreferences: {
             nodeIntegration: true,
             // devTools: false

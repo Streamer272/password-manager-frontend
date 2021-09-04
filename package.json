@@ -18,7 +18,8 @@
         "build": "react-scripts build",
         "test": "react-scripts test",
         "eject": "react-scripts eject",
-        "electron-dev": "electron ."
+        "electron-dev": "electron .",
+        "build-css": "postcss src/styles/Login.scss -o src/styles/out/Login.css"
     },
     "eslintConfig": {
         "extends": [
@@ -37,5 +38,12 @@
             "last 1 firefox version",
             "last 1 safari version"
         ]
+    },
+    "devDependencies": {
+        "autoprefixer": "^10.3.4",
+        "cssnano": "^5.0.8",
+        "postcss-mixins": "^8.1.0",
+        "postcss-nested": "^5.0.6",
+        "stylelint": "^13.13.1"
     }
 }
