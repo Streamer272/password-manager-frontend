@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { QueryControls } from '../components/QueryControls';
+import { QueryControls } from '../components';
 import '../styles/Home.css';
 
 const Home = () => {
