@@ -1,13 +1,26 @@
 import { useState } from 'react';
+import { login as apiLogin } from '../api';
 import '../styles/Login.css';
 
-const Login = () => {
+const Login = ({ setTokenId }) => {
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
     const [message, setMessage] = useState('You must login to use this app');
 
-    const login = (e) => {
+    const login = async (e) => {
         e.preventDefault();
+
+        const response = await apiLogin(username, password);
+
+        if (response.status === 400) {
+            setMessage((await response.json()).message);
+        }
+        else if (response.status === 200) {
+            setTokenId((await response.json()).token);
+        }
+        else {
+            setMessage('Something went wrong while logging in...');
+        }
     }
 
     return (
@@ -19,7 +32,7 @@ const Login = () => {
                 <label htmlFor='username-input'>Username: </label>
                 <input id='username-input' onChange={(e) => setUsername(e.target.value)} />
                 <label htmlFor='password-input'>Password: </label>
-                <input id='password-input' onChange={(e) => setPassword(e.target.value)} />
+                <input id='password-input' onChange={(e) => setPassword(e.target.value)} type='password' />
 
                 <br />
                 <div className='login-form-controls'>

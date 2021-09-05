@@ -1,6 +1,5 @@
 import { useState } from 'react';
-import { Home } from './routes/Home';
-import { Login } from './routes/Login';
+import { Home, Login } from './routes';
 import './styles/App.css';
 
 const App = () => {
@@ -8,7 +7,7 @@ const App = () => {
 
     return (
         <div className='app'>
-            { !tokenId && <Login /> }
+            { !tokenId && <Login setTokenId={ setTokenId } /> }
             { tokenId && <Home /> }
         </div>
     )
