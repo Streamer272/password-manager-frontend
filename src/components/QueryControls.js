@@ -4,7 +4,8 @@ import '../styles/QueryControls.css';
 const QueryControls = ({ queryCallback }) => {
     const [query, setQuery] = useState('');
 
-    const onSubmit = () => {
+    const onSubmit = (e) => {
+        e.preventDefault();
        queryCallback(query);
     }
 

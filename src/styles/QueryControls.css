@@ -1,12 +1,23 @@
-.form {
+form {
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-end;
   width: 100%;
-  height: fit-content; }
-
-.form input {
-  border: none;
-  border-radius: .3rem; }
+  height: fit-content;
+  margin: 1rem 0 0 0; }
+  form label {
+    color: #eeeeee; }
+  form input {
+    padding: .15rem; }
+  form button {
+    margin: 0 1rem 0 0;
+    padding: .1rem .45rem; }
+  form label, form input {
+    margin-right: .5rem; }
+  form button, form input {
+    border: none;
+    border-radius: .3rem; }
+  form button, form label, form input {
+    font-size: 1.3rem; }
 
 /*# sourceMappingURL=QueryControls.css.map */

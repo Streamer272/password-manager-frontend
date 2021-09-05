@@ -1,13 +1,36 @@
-.form {
+form {
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-end;
 
     width: 100%;
     height: fit-content;
-}
 
-.form input {
-    border: none;
-    border-radius: .3rem;
+    margin: 1rem 0 0 0;
+
+    label {
+        color: #eeeeee;
+    }
+
+    input {
+        padding: .15rem;
+    }
+
+    button {
+        margin: 0 1rem 0 0;
+        padding: .1rem .45rem;
+    }
+
+    label, input {
+        margin-right: .5rem;
+    }
+
+    button, input {
+        border: none;
+        border-radius: .3rem;
+    }
+
+    button, label, input {
+        font-size: 1.3rem;
+    }
 }

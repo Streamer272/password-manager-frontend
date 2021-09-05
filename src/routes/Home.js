@@ -6,7 +6,7 @@ const Home = () => {
     const [passwords, setPasswords] = useState([]);
 
     const queryPasswords = (query) => {
-
+        console.log(`Querying...`, query)
     }
 
     return (

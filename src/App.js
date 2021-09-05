@@ -3,11 +3,11 @@ import { Home, Login } from './routes';
 import './styles/App.css';
 
 const App = () => {
-    const [tokenId, setTokenId] = useState(parseInt(localStorage.getItem('tokenId')) || null);
+    const [tokenId, setTokenId] = useState(parseInt(sessionStorage.getItem('tokenId')) || null);
 
     useEffect(() => {
         if (tokenId) {
-            localStorage.setItem('tokenId', tokenId.toString());
+            sessionStorage.setItem('tokenId', tokenId.toString());
         }
     }, [tokenId]);
 
