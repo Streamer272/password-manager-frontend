@@ -1,5 +1,9 @@
 import { useState } from 'react';
-import { Password, QueryControls } from '../components';
+import {
+    Password,
+    QueryControls,
+    AddPassword
+} from '../components';
 import * as Api from '../api';
 import '../styles/Home.css';
 
@@ -8,8 +12,7 @@ const Home = ({ token }) => {
 
     const queryPasswords = async (query) => {
         const response = await Api.password.queryPasswordsByName(query, token);
-        console.log(`got them response `, await response.json())
-        // setPasswords(await response.json())
+        setPasswords(await response.json())
     }
 
     return (
@@ -19,6 +22,8 @@ const Home = ({ token }) => {
             </div>
             <div className='container'>
                 <QueryControls queryCallback={ queryPasswords } />
+
+                <AddPassword token={ token } />
             </div>
         </div>
     )

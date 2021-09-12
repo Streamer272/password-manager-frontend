@@ -3,7 +3,7 @@ import { Home, Login } from './routes';
 import './styles/App.css';
 
 const App = () => {
-    const [token, setToken] = useState(parseInt(sessionStorage.getItem('token')) || null);
+    const [token, setToken] = useState(parseInt(localStorage.getItem('token')) || null);
 
     useEffect(() => {
         if (token) {
