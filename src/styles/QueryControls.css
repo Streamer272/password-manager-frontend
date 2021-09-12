@@ -6,9 +6,11 @@ form {
   height: fit-content;
   margin: 1rem 0 0 0; }
   form label {
-    color: #eeeeee; }
+    color: #eeeeee;
+    width: fit-content; }
   form input {
-    padding: .15rem; }
+    padding: .15rem;
+    width: 40%; }
   form button {
     margin: 0 1rem 0 0;
     padding: .1rem .45rem; }

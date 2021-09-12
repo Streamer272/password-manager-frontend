@@ -1,8 +1,8 @@
 import { useState } from 'react';
-import { login as apiLogin } from '../api';
+import * as Api from '../api';
 import '../styles/Login.css';
 
-const Login = ({ setTokenId }) => {
+const Login = ({ setToken }) => {
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
     const [message, setMessage] = useState('You must login to use this app');
@@ -10,13 +10,13 @@ const Login = ({ setTokenId }) => {
     const login = async (e) => {
         e.preventDefault();
 
-        const response = await apiLogin(username, password);
+        const response = await Api.user.login(username, password);
 
         if (response.status === 400) {
             setMessage((await response.json()).message);
         }
         else if (response.status === 200) {
-            setTokenId((await response.json()).token);
+            setToken((await response.json()).token);
         }
         else {
             setMessage('Something went wrong while logging in...');

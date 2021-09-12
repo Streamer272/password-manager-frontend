@@ -1,9 +1,10 @@
-export const makeRequest = async (url, data, method) => {
+export const makeRequest = async (url, data = {}, method = 'GET', token = 0) => {
     return await fetch(url, {
-        method: method || 'GET',
+        method: method,
         headers: {
-            'Content-Type': 'application/json'
+            'Content-Type': 'application/json',
+            'token': token
         },
-        body: JSON.stringify(data)
+        body: method === 'GET' ? null : JSON.stringify(data)
     });
 }

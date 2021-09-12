@@ -1,3 +1,7 @@
-import { login, logout } from './user';
+import * as user from './user';
+import * as password from './password';
 
-export { login, logout };
+export {
+    user,
+    password
+};

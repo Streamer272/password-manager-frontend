@@ -7,9 +7,9 @@ const login = async (username, password) => {
     }, 'POST');
 }
 
-const logout = async (tokenId) => {
+const logout = async (token) => {
     return await makeRequest('http://localhost:8080/api/user/login', {
-        tokenId
+        token
     }, 'POST');
 }
 

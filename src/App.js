@@ -3,18 +3,18 @@ import { Home, Login } from './routes';
 import './styles/App.css';
 
 const App = () => {
-    const [tokenId, setTokenId] = useState(parseInt(sessionStorage.getItem('tokenId')) || null);
+    const [token, setToken] = useState(parseInt(sessionStorage.getItem('token')) || null);
 
     useEffect(() => {
-        if (tokenId) {
-            sessionStorage.setItem('tokenId', tokenId.toString());
+        if (token) {
+            localStorage.setItem('token', token.toString());
         }
-    }, [tokenId]);
+    }, [token]);
 
     return (
         <div className='app'>
-            { !tokenId && <Login setTokenId={ setTokenId } /> }
-            { tokenId && <Home /> }
+            { !token && <Login setToken={ setToken } /> }
+            { token && <Home token={ token } /> }
         </div>
     )
 }

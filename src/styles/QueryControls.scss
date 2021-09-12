@@ -10,10 +10,14 @@ form {
 
     label {
         color: #eeeeee;
+
+        width: fit-content;
     }
 
     input {
         padding: .15rem;
+
+        width: 40%;
     }
 
     button {

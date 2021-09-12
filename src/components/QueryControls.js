@@ -5,8 +5,8 @@ const QueryControls = ({ queryCallback }) => {
     const [query, setQuery] = useState('');
 
     const onSubmit = (e) => {
-        e.preventDefault();
-       queryCallback(query);
+        if (e) e.preventDefault();
+        queryCallback(query);
     }
 
     return (
